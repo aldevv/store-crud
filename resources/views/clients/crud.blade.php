@@ -14,9 +14,6 @@
             <td>
                 <button type='submit' class="btn-primary" id='btnAdd' value="save">Add</button>
             </td>
-            <td>
-                <button type='button' class="btn-primary" id='btnClear'>Clear</button>
-            </td>
         </tr>
 
     </form>

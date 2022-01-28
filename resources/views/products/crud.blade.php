@@ -19,10 +19,7 @@
         </tr>
         <tr>
             <td>
-                <button type='submit' id='btnAdd' value="save">Add</button>
-            </td>
-            <td>
-                <button type='button' id='btnClear'>Clear</button>
+                <button type='submit' class="btn-primary" id='btnAdd' value="save">Add</button>
             </td>
         </tr>
 
