@@ -18,15 +18,9 @@
                             <span class="input-group-text">name</span>
                             <input type="text" class="form-control" name="Name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                         </div>
-
-                        <!-- price -->
-                        <div class="input-group input-group-sm mb-3">
-                            <span class="input-group-text">price</span>
-                            <input type="text" class="form-control" name="Price" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                        </div>
                     @else
                         <div class="input-group input-group-sm mb-3">
-                            <span class="input-group-text">Are you sure you want to delete the product with id {{ $id }}?</span>
+                            <span class="input-group-text">Are you sure you want to delete the client with id {{ $id }}?</span>
                         </div>
                 @endif
                 </div>

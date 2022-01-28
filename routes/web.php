@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProductsController;
 
 /*
@@ -19,7 +20,14 @@ use App\Http\Controllers\ProductsController;
 //     return view('products.crud');
 // });
 
-Route::get('/', [ProductsController::class, 'showAll'])->name('showAll');
+Route::get('/', [ClientController::class, 'showAll'])->name('clients');
+Route::post('/createClient', [ClientController::class, 'createClient'])->name('createClient');
+Route::post('/updateClient', [ClientController::class, 'updateClient'])->name('updateClient');
+Route::post('/deleteClient', [ClientController::class, 'deleteClient'])->name('deleteClient');
+
+Route::get('/products', [ProductsController::class, 'showAll'])->name('products');
 Route::post('/createProd', [ProductsController::class, 'createProd'])->name('createProd');
 Route::post('/updateProd', [ProductsController::class, 'updateProd'])->name('updateProd');
 Route::post('/deleteProd', [ProductsController::class, 'deleteProd'])->name('deleteProd');
+
+Route::post('/buyProduct', [ProductsController::class, 'buyProduct'])->name('buyProduct');
