@@ -43,6 +43,17 @@ class ProductsController extends Controller
     {
     }
 
+    public function updateProd(Request $req)
+    {
+
+        return view("products.crud", ['products' => Product::all()]);
+    }
+
+    public function deleteProd(Request $req)
+    {
+        return view("products.crud", ['products' => Product::all()]);
+    }
+
     public function showAll()
     {
         return view("products.crud", ['products' => Product::all()]);

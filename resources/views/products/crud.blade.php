@@ -19,8 +19,6 @@
         <tr>
             <td>
                 <button type='submit' id='btnAdd' value="save">Add</button>
-                <button type='button' id='btnUpdate' style="display: none;">Update</button>
-                <button type='button' id='btnUpdate' style="display: none;">Delete</button>
             </td>
             <td>
                 <button type='button' id='btnClear'>Clear</button>
@@ -37,18 +35,31 @@
             <th>Price</th>
     </thead>
     <tbody></tbody>
+
+    @foreach($products as $prod)
+    <tr>
+        <td>
+            {{ $prod->id }}
+        </td>
+        <td>
+            {{ $prod->name }}
+        </td>
+        <td>
+            {{ $prod->price }}
+        </td>
+        <td>
+            <!-- Button trigger modal -->
+            @include('products.modal', array('buttonName'=>'Update', 'type'=>'update-'.$prod->id, 'func'=> 'updateProd', 'id' => $prod->id))
+            @include('products.modal', array('buttonName'=>'Delete', 'type'=>'delete-'.$prod->id, 'func'=> 'deleteProd', 'id' => $prod->id))
+        </td>
+    </tr>
+    @endforeach
+
+
 </table>
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript">
-    @foreach ($products as $prod)
-        var table = "<tr><td> {{ $prod->id }} </td><td> {{ $prod->name }} </td><td> {{ $prod->price }} </td></tr>";
-        $("#tblCustomers").append(table);
-    @endforeach
-    //function Clear() {
-    //    $("#txtId").val("");
-    //    $("#txtName").val("");
-    //    $("#txtPrice").val("");
-    //    $("#hfRowIndex").val("");
-    //}
 </script>
+
 @endsection
