@@ -17,4 +17,10 @@ touch database/database.sql
 php artisan migrate
 ```
 
+# run server
+
+```
+php artisan serve
+```
+
 
